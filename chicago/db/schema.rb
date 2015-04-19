@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "title"
     t.string  "photo_url"
     t.integer "price"
-    t.string  "description"
+    t.text    "description", limit: 1000
   end
 
 end

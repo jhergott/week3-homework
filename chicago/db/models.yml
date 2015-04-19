@@ -2,7 +2,7 @@ Place
   title: string
   photo_url: string
   price: integer
-  description: string
+  description: text
 
 # Example table for a typical Book model.
 #
