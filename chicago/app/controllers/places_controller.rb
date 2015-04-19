@@ -33,6 +33,8 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find_by(:id => params["id"])
+    @reviews = Review.where(:place_id => @place.id)
+    @reviews = @reviews.order("id desc")
   end
 
   def delete
@@ -41,6 +43,13 @@ class PlacesController < ApplicationController
     redirect_to "/places"
   end
 
-
+  def review
+    title = params["title"]
+    rating = params["rating"].to_i
+    description = params["description"]
+    place_id = params["id"]
+    Review.create(title: title, rating: rating, description: description, place_id: place_id)
+    redirect_to "/places/#{place_id}"
+  end
 
 end

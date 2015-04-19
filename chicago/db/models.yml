@@ -4,6 +4,12 @@ Place
   price: integer
   description: text
 
+Review
+  title: string
+  rating: integer
+  description: text
+  place_id: integer
+
 # Example table for a typical Book model.
 #
 # Book

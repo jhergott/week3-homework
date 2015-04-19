@@ -46,3 +46,27 @@
 
 <h4>Description: </h4>
 <p> <%= @place.description %> </p>
+
+<br><br>
+
+<form action="/places/<%= @place.id %>/review">
+Title:<br>
+<input type="text" name="title">
+<br>
+Rating (0 to 5):<br>
+<input type="text" name="rating">
+<br>
+Description:<br>
+<input type="text" name="description">
+<br><br>
+<input type="submit" value="Submit Review">
+</form>
+
+<br><br>
+
+<h3>REVIEWS</h3>
+
+<% @reviews.each do |review| %>
+  <p><%= review.title%>  --  <%= review.rating%> STARS</p>
+  <p><%= review.description%> </p>
+<% end %>
