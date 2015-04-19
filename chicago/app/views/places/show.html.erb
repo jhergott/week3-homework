@@ -1,0 +1,44 @@
+<style>
+  h2 {
+    color: white;
+    background: #555;
+    padding: 6px;
+    text-align: center;
+  }
+  .rating {
+    color: gray;
+    border: solid 1px gray;
+    padding: 4px;
+  }
+  img {
+    float: left;
+    margin-right: 40px;
+    box-shadow: 8px 8px 4px gray;
+    width: "400px";
+  }
+  p {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+</style>
+
+<h2><%= @place.title %></h2>
+
+<img src="<%= @place.photo_url %>">
+
+
+<% formatted_price = @place.price / 100%>
+<% price_cents = @place.price % 100 %>
+<h4>Price: </h4>
+<% if price_cents < 10 %>
+
+<p> $ <%= formatted_price %>.0<%=  price_cents %> </p>
+
+<% else %>
+
+<p> $ <%= formatted_price %>.<%=  price_cents %> </p>
+
+<% end %>
+
+<h4>Description: </h4>
+<p> <%= @place.description %> </p>
