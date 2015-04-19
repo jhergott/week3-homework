@@ -22,13 +22,17 @@
   }
 </style>
 
+<a href="/places">Home Page</a>
+<br><br>
+<a href="/places/<%= @place.id %>/edit">Edit Location</a>
+
 <h2><%= @place.title %></h2>
 
 <img src="<%= @place.photo_url %>">
 
-
 <% formatted_price = @place.price / 100%>
 <% price_cents = @place.price % 100 %>
+
 <h4>Price: </h4>
 <% if price_cents < 10 %>
 

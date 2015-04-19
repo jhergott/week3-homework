@@ -1,0 +1,19 @@
+<a href="/places/<%= @place_to_edit.id %>">Go Back</a>
+<p></p>
+<p></p>
+
+<form action="/places/<%= @place_to_edit.id %>/update">
+Title:<br>
+<input type="text" name="title" value="<%= @place_to_edit.title %>">
+<br>
+Image URL:<br>
+<input type="text" name="url" value="<%= @place_to_edit.photo_url %>">
+<br>
+Price (in cents):<br>
+<input type="text" name="price" value="<%= @place_to_edit.price %>">
+<br>
+Description:<br>
+<input type="text" name="description" value="<%= @place_to_edit.description %>">
+<br><br>
+<input type="submit" value="Update">
+</form>
